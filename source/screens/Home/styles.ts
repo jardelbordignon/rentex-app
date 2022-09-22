@@ -1,15 +1,29 @@
 import { StyleSheet } from 'react-native'
+import { RFValue } from 'react-native-responsive-fontsize'
 
 import { theme } from 's/theme'
 
 export default StyleSheet.create({
   box: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: theme.colors.background_primary,
   },
-  title: {
-    fontSize: 30,
-    fontFamily: theme.fontFamily.secondary_600,
+  header: {
+    width: '100%',
+    height: RFValue(113),
+    backgroundColor: theme.colors.header,
+    justifyContent: 'flex-end',
+    paddingVertical: RFValue(32),
+    paddingHorizontal: RFValue(24),
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  totalCars: {
+    fontSize: RFValue(theme.fontSize.sm),
+    fontFamily: theme.fontFamily.primary_400,
+    color: theme.colors.text,
   },
 })

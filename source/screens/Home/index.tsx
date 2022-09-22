@@ -5,7 +5,7 @@ import s from './styles'
 export function Home() {
   return (
     <View style={s.box}>
-      <Text>Home</Text>
+      <Text style={s.title}>Home</Text>
     </View>
   )
 }

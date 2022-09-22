@@ -1,18 +1,15 @@
 import { StyleSheet } from 'react-native'
 
+import { theme } from 's/theme'
+
 export default StyleSheet.create({
   box: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  logo: {
-    width: 214,
-    height: 120,
-    marginTop: 74,
-    marginBottom: 48,
-  },
-  contentList: {
-    paddingLeft: 32,
-    paddingRight: 64,
+  title: {
+    fontSize: 30,
+    fontFamily: theme.fontFamily.secondary_600,
   },
 })

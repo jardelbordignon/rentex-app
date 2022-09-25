@@ -21,9 +21,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  totalCars: {
-    fontSize: RFValue(theme.fontSize.sm),
-    fontFamily: theme.fontFamily.primary_400,
-    color: theme.colors.text,
+  contentList: {
+    padding: theme.spacing[3],
   },
 })

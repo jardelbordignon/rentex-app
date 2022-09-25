@@ -4,6 +4,7 @@ type CarImageType = {
 }
 
 export type CarType = {
+  id: string
   brand: string
   name: string
   rent: {

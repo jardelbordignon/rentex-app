@@ -1,8 +1,9 @@
-import { Text, View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import { StatusBar } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 
 import Logo from 's/assets/logo.svg'
+import { Txt } from 's/components/atoms'
 import { CarListItem } from 's/components/molecules/CarListItem'
 import { CarType } from 's/types/car'
 
@@ -10,6 +11,7 @@ import s from './styles'
 
 const carsData: CarType[] = [
   {
+    id: '1',
     name: 'Toyota',
     brand: 'Toyota',
     rent: { period: 'Ao dia', price: 150 },
@@ -18,6 +20,7 @@ const carsData: CarType[] = [
     ],
   },
   {
+    id: '2',
     name: 'Toyota',
     brand: 'Toyota',
     rent: { period: 'Ao dia', price: 150 },
@@ -34,13 +37,17 @@ export function Home() {
       <View style={s.header}>
         <View style={s.headerContent}>
           <Logo width={RFValue(108)} height={RFValue(12)} />
-          <Text style={s.totalCars}>Total de 12 carros</Text>
+          <Txt size="xs">Total de 12 carros</Txt>
         </View>
       </View>
 
-      {carsData.map((data, i) => (
-        <CarListItem key={i} data={data} />
-      ))}
+      <FlatList
+        data={carsData}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => <CarListItem data={item} />}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={s.contentList}
+      />
     </View>
   )
 }

@@ -13,6 +13,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: RFValue(theme.spacing[3]),
     marginBottom: RFValue(theme.spacing[3]),
+    borderRadius: 5,
   },
 
   details: {},

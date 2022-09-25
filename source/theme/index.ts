@@ -1,10 +1,3 @@
-export type ThemeColors = {
-  background: string
-  text: string
-}
-
-export type ThemeType = typeof baseTheme & ThemeColors
-
 const lightColors = {
   header: '#1B1B1F',
 
@@ -35,6 +28,7 @@ const baseTheme = {
   },
 
   fontSize: {
+    xs: 12,
     sm: 14,
     md: 16,
     lg: 24,
@@ -42,18 +36,15 @@ const baseTheme = {
   },
 
   spacing: {
-    1: 4,
-    2: 8,
-    3: 12,
-    4: 16,
-    5: 24,
-    6: 32,
-    7: 40,
-    8: 48,
-    9: 56,
-    10: 64,
-    11: 72,
-    12: 80,
+    '1': 4,
+    '2': 8,
+    '3': 16,
+    '4': 24,
+    '5': 32,
+    '6': 40,
+    '7': 48,
+    '8': 64,
+    '9': 80,
   },
 }
 
@@ -86,6 +77,8 @@ export const theme = {
   ...baseTheme,
   colors: lightColors,
 }
+
+export type ThemeType = typeof theme
 
 // export default {
 //   dark: { ...theme, colors: darkColors },

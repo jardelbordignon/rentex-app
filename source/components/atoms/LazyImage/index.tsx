@@ -3,18 +3,23 @@ import { Animated, ImageBackground, type ImageProps } from 'react-native'
 
 import s from './styles'
 
-type Props = {
+type Props = ImageProps & {
   source: ImageProps['source']
-  smallSource?: ImageProps['source']
+  thumbSource?: ImageProps['source']
   resizeMode?: ImageProps['resizeMode']
   aspectRatio?: number
+  width?: number
+  height?: number
 }
 
 export function LazyImage({
   source,
-  smallSource,
+  thumbSource,
   aspectRatio = 2,
   resizeMode = 'contain',
+  width = 150,
+  height = 150,
+  ...rest
 }: Props) {
   const opacity = new Animated.Value(0)
 
@@ -29,18 +34,20 @@ export function LazyImage({
   const image = (
     <Animated.Image
       source={source}
-      style={[s.image, { aspectRatio, opacity }]}
+      style={[s.image, { aspectRatio, opacity, width, height }]}
       resizeMode={resizeMode}
       onLoadEnd={handleAnimate}
+      {...rest}
     />
   )
 
-  if (smallSource) {
+  if (thumbSource) {
     return (
       <ImageBackground
         style={[s.smallImage, { aspectRatio }]}
-        source={smallSource}
-        resizeMode={resizeMode}>
+        source={thumbSource}
+        resizeMode={resizeMode}
+        {...rest}>
         {image}
       </ImageBackground>
     )

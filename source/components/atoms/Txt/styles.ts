@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-  image: {},
-  smallImage: {},
+  txt: {
+    fontFamily: 'Inter-Regular',
+    fontSize: 16,
+  },
 })

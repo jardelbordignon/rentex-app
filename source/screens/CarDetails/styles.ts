@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 import { theme } from 's/theme'
 
@@ -50,5 +50,11 @@ export default StyleSheet.create({
   about: {
     lineHeight: 23,
     marginTop: theme.spacing[4],
+  },
+
+  footer: {
+    width: '100%',
+    padding: theme.spacing[4],
+    paddingBottom: getBottomSpace() + theme.spacing[4],
   },
 })

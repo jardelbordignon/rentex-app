@@ -7,7 +7,7 @@ import gasolineSvg from 's/assets/gasoline.svg'
 import peopleSvg from 's/assets/people.svg'
 import speedSvg from 's/assets/speed.svg'
 import { Txt } from 's/components/atoms'
-import { BackButton, ImageSlider } from 's/components/molecules'
+import { BackButton, Button, ImageSlider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 
 import s from './styles'
@@ -78,6 +78,10 @@ export function CarDetails() {
           fiat dob lo fiat doblo fiat dob lo fiat doblo
         </Txt>
       </ScrollView>
+
+      <View style={s.footer}>
+        <Button title="Confirmar" />
+      </View>
     </View>
   )
 }

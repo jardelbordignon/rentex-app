@@ -2,7 +2,7 @@ import { ScrollView, StatusBar, View } from 'react-native'
 
 import ArrowSvg from 's/assets/arrow.svg'
 import { Txt } from 's/components/atoms'
-import { BackButton, Button } from 's/components/molecules'
+import { BackButton, Button, Calendar } from 's/components/molecules'
 
 import s from './styles'
 
@@ -38,10 +38,9 @@ export function Scheduling() {
         </View>
       </View>
 
-      <ScrollView
-        contentContainerStyle={s.content}
-        showsVerticalScrollIndicator={false}
-      />
+      <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
+        <Calendar />
+      </ScrollView>
 
       <View style={s.footer}>
         <Button title="Confirmar" />

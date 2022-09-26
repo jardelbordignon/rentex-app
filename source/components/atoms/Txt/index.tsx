@@ -8,6 +8,7 @@ type Props = TextProps & {
   size?: keyof ThemeType['fontSize']
   color?: keyof ThemeType['colors']
   transform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase'
+  align?: 'auto' | 'center' | 'justify' | 'right' | 'left'
 }
 
 export function Txt({
@@ -15,6 +16,7 @@ export function Txt({
   size = 'md',
   color = 'text',
   transform = 'none',
+  align = 'auto',
   ...rest
 }: Props) {
   return (
@@ -26,6 +28,7 @@ export function Txt({
           fontSize: RFValue(theme.fontSize[size]),
           color: theme.colors[color],
           textTransform: transform,
+          textAlign: align,
         },
         rest.style
       )}>

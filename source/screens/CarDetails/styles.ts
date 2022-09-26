@@ -21,4 +21,24 @@ export default StyleSheet.create({
   sliderBox: {
     marginTop: getStatusBarHeight() + theme.spacing[4],
   },
+
+  content: {
+    padding: theme.spacing[4],
+    alignItems: 'center',
+  },
+
+  details: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: theme.spacing[5],
+  },
+
+  description: {},
+
+  rent: {},
+
+  about: {
+    marginTop: theme.spacing[4],
+  },
 })

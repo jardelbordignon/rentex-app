@@ -1,8 +1,6 @@
 // https://www.youtube.com/watch?v=2nXsLpUCO20&t=3064s
 import { Animated, ImageBackground, type ImageProps } from 'react-native'
 
-import s from './styles'
-
 type Props = ImageProps & {
   source: ImageProps['source']
   thumbSource?: ImageProps['source']
@@ -31,10 +29,10 @@ export function LazyImage({
     }).start()
   }
 
-  const image = (
+  const animatedImage = (
     <Animated.Image
       source={source}
-      style={[s.image, { aspectRatio, opacity, width, height }]}
+      style={Object.assign({ aspectRatio, opacity, width, height }, rest.style)}
       resizeMode={resizeMode}
       onLoadEnd={handleAnimate}
       {...rest}
@@ -44,14 +42,14 @@ export function LazyImage({
   if (thumbSource) {
     return (
       <ImageBackground
-        style={[s.smallImage, { aspectRatio }]}
+        style={Object.assign({ aspectRatio, width, height }, rest.style)}
         source={thumbSource}
         resizeMode={resizeMode}
         {...rest}>
-        {image}
+        {animatedImage}
       </ImageBackground>
     )
   }
 
-  return image
+  return animatedImage
 }

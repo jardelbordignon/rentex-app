@@ -38,7 +38,17 @@ export default StyleSheet.create({
 
   rent: {},
 
+  accessories: {
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: theme.spacing[3],
+  },
+
   about: {
+    lineHeight: 23,
     marginTop: theme.spacing[4],
   },
 })

@@ -1,7 +1,14 @@
 import { ScrollView, View } from 'react-native'
 
+import accelerationSvg from 's/assets/acceleration.svg'
+import exchangeSvg from 's/assets/exchange.svg'
+import forceSvg from 's/assets/force.svg'
+import gasolineSvg from 's/assets/gasoline.svg'
+import peopleSvg from 's/assets/people.svg'
+import speedSvg from 's/assets/speed.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, ImageSlider } from 's/components/molecules'
+import { Accessory } from 's/components/molecules/Accessory'
 
 import s from './styles'
 
@@ -54,6 +61,15 @@ export function CarDetails() {
               R$ 200
             </Txt>
           </View>
+        </View>
+
+        <View style={s.accessories}>
+          <Accessory name="380Km/h" icon={speedSvg} />
+          <Accessory name="3.2s" icon={accelerationSvg} />
+          <Accessory name="800 HP" icon={forceSvg} />
+          <Accessory name="Gasolina" icon={gasolineSvg} />
+          <Accessory name="Auto" icon={exchangeSvg} />
+          <Accessory name="2 pessoas" icon={peopleSvg} />
         </View>
 
         <Txt family="primary_400" size="sm" align="justify" style={s.about}>

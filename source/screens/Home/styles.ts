@@ -13,8 +13,8 @@ export default StyleSheet.create({
     height: RFValue(113),
     backgroundColor: theme.colors.header,
     justifyContent: 'flex-end',
-    paddingVertical: RFValue(32),
-    paddingHorizontal: RFValue(24),
+    paddingVertical: theme.spacing[5],
+    paddingHorizontal: theme.spacing[4],
   },
   headerContent: {
     flexDirection: 'row',

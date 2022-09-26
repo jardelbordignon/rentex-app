@@ -1,3 +1,5 @@
+import { RFValue } from 'react-native-responsive-fontsize'
+
 const lightColors = {
   header: '#1B1B1F',
 
@@ -20,31 +22,50 @@ const lightColors = {
 
 const baseTheme = {
   fontFamily: {
+    /** Inter-Regular */
     primary_400: 'Inter-Regular',
+    /** Inter-Medium */
     primary_500: 'Inter-Medium',
+    /** Archivo-Regular */
     secondary_400: 'Archivo-Regular',
+    /** Archivo-Medium */
     secondary_500: 'Archivo-Medium',
+    /** Archivo-SemiBold */
     secondary_600: 'Archivo-SemiBold',
   },
 
   fontSize: {
-    xs: 12,
-    sm: 14,
-    md: 16,
-    lg: 24,
-    xl: 32,
+    /** 12px */
+    xs: RFValue(12),
+    /** 14px */
+    sm: RFValue(14),
+    /** 16px */
+    md: RFValue(16),
+    /** 24px */
+    lg: RFValue(24),
+    /** 32px */
+    xl: RFValue(32),
   },
 
   spacing: {
-    '1': 4,
-    '2': 8,
-    '3': 16,
-    '4': 24,
-    '5': 32,
-    '6': 40,
-    '7': 48,
-    '8': 64,
-    '9': 80,
+    /** 4px */
+    '1': RFValue(4),
+    /** 8px */
+    '2': RFValue(8),
+    /** 16px */
+    '3': RFValue(16),
+    /** 24px */
+    '4': RFValue(24),
+    /** 32px */
+    '5': RFValue(32),
+    /** 40px */
+    '6': RFValue(40),
+    /** 48px */
+    '7': RFValue(48),
+    /** 64px */
+    '8': RFValue(64),
+    /** 80px */
+    '9': RFValue(80),
   },
 }
 

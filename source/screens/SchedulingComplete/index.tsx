@@ -1,4 +1,4 @@
-import { View, useWindowDimensions } from 'react-native'
+import { StatusBar, View, useWindowDimensions } from 'react-native'
 
 import DoneSvg from 's/assets/done.svg'
 import LogoBackgroundSvg from 's/assets/logo_background_gray.svg'
@@ -12,6 +12,7 @@ export function SchedulingComplete() {
 
   return (
     <View style={s.box}>
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
       <LogoBackgroundSvg width={width} />
 
       <View style={s.content}>

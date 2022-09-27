@@ -12,7 +12,7 @@ export default StyleSheet.create({
 
   header: {
     width: '100%',
-    height: RFValue(325),
+    height: RFValue(300),
     backgroundColor: theme.colors.header,
     justifyContent: 'center',
     padding: theme.spacing[4],
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: theme.spacing[5],
+    marginVertical: theme.spacing[4],
   },
 
   dateInfo: {
@@ -36,7 +36,7 @@ export default StyleSheet.create({
   },
 
   content: {
-    paddingBottom: theme.spacing[4],
+    paddingBottom: theme.spacing[3],
   },
 
   footer: {

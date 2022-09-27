@@ -1,0 +1,43 @@
+Heurísticas de Nielsen
+
+"Mesmo os melhores designers produzem produtos de sucesso apenas
+se seus designs resolverem os problemas certos.
+Uma interface maravilhosa para os recursos errados falhará."
+                                                       - Jackob Nielsen
+
+Recomendações.
+
+1- Visibilidade do Status do Sistema.
+  Deixar claro para o usuário o que está acontecendo no sistema durante os processos.
+  Feedbacks constantes.
+
+2- Compatibilidade entre o sistema e o mundo real.
+  Uma mensagem de internal error 500 por exemplo, pro usuário não faz sentido,
+  tratar essas situações para que todos possam entender o que houve e o que fazer.
+
+3- Controle e liberdade para o usuário.
+  Disponibilizar ajustes de tema, idioma, customização... artefatos que tornem mais confortável o uso.
+
+4- Consitência e Padronização.
+  Manter as telas o mais semelhantes possível, manter os elementos dispostos de forma que 
+  o usuário não precise procurar por eles na proxima tela.
+
+5- Prevenção de erros.
+  Nunca exibir mensages de erros "puras", sempre mensagens amigáveis.
+
+6- Reconhecimento em vez de memorização.
+  Também ligado ao item 4 pois a padronização ajuda no reconhecimento, mas aqui entram os ícones,
+  cores, hierarquia de espaçamentos, font family, font size ...
+
+7- Eficiência e flexibilidade de uso.
+  Permitir que o usuário mude a order e a posição dos elementos (um tanto limitado no mobile pelo tamanho da tela)
+
+8- Estética e design minimalista.
+  Manter o necessário em tela, atenção a organização dos elementos.
+
+9- Ajude o usuário a saber onde errou.
+  Sinalizar com cores, mensagens... para que a correção seja simples e imediata.
+
+10- Ajuda com documentação.
+  Caso necessário, criar uma documentação para usuários, com perguntas e respostas mais comuns,
+  passos para realizar um processo mais complicado...

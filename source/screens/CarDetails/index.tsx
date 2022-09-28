@@ -1,15 +1,10 @@
 import { ScrollView, View } from 'react-native'
 
-// import accelerationSvg from 's/assets/acceleration.svg'
-// import exchangeSvg from 's/assets/exchange.svg'
-// import forceSvg from 's/assets/force.svg'
-// import gasolineSvg from 's/assets/gasoline.svg'
-// import peopleSvg from 's/assets/people.svg'
-import speedSvg from 's/assets/speed.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, ImageSlider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 import { CarDetailsNavProps } from 's/types/navigation'
+import { accessoryIcon } from 's/utils/accessoryIcon'
 
 import s from './styles'
 
@@ -58,7 +53,11 @@ export function CarDetails({ navigation, route }: CarDetailsNavProps) {
 
         <View style={s.accessories}>
           {accessories.map(accessory => (
-            <Accessory key={accessory.name} name={accessory.name} icon={speedSvg} />
+            <Accessory
+              key={accessory.name}
+              name={accessory.name}
+              icon={accessoryIcon(accessory.type)}
+            />
           ))}
         </View>
 

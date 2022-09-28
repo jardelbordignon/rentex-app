@@ -22,15 +22,8 @@ export default StyleSheet.create({
     borderRadius: 3,
   },
 
-  images: {
-    width,
-    height: 132,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
   image: {
-    width: 280,
+    width,
     height: 132,
   },
 })

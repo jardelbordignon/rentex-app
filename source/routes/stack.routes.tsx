@@ -8,12 +8,12 @@ import { SchedulingDetails } from 's/screens/SchedulingDetails'
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
-export const AppRoutes = () => (
-  <Navigator screenOptions={{ headerShown: false }} initialRouteName="schedulingComplete">
-    <Screen name="home" component={Home} />
-    <Screen name="carDetails" component={CarDetails} />
-    <Screen name="scheduling" component={Scheduling} />
-    <Screen name="schedulingComplete" component={SchedulingComplete} />
-    <Screen name="schedulingDetails" component={SchedulingDetails} />
+export const StackRoutes = () => (
+  <Navigator screenOptions={{ headerShown: false }} initialRouteName="home">
+    <Screen name="Home" component={Home} />
+    <Screen name="CarDetails" component={CarDetails} />
+    <Screen name="Scheduling" component={Scheduling} />
+    <Screen name="SchedulingComplete" component={SchedulingComplete} />
+    <Screen name="SchedulingDetails" component={SchedulingDetails} />
   </Navigator>
 )

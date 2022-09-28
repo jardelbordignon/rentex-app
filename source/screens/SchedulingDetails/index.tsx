@@ -11,6 +11,7 @@ import { Txt } from 's/components/atoms'
 import { BackButton, Button, ImageSlider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 import { theme } from 's/theme'
+import { NavProps } from 's/types/navigation'
 
 import s from './styles'
 
@@ -20,15 +21,11 @@ const images = [
   },
 ]
 
-export function SchedulingDetails() {
+export function SchedulingDetails({ navigation }: NavProps) {
   return (
     <View style={s.box}>
       <View style={s.header}>
-        <BackButton
-          onPress={() => {
-            console.log('Press')
-          }}
-        />
+        <BackButton onPress={navigation.goBack} />
       </View>
 
       <View style={s.sliderBox}>
@@ -120,7 +117,11 @@ export function SchedulingDetails() {
       </ScrollView>
 
       <View style={s.footer}>
-        <Button title="Confirmar" />
+        <Button
+          title="Alugar agora"
+          color="success"
+          onPress={() => navigation.navigate('SchedulingComplete')}
+        />
       </View>
     </View>
   )

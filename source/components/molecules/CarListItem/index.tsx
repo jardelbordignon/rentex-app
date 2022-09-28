@@ -1,4 +1,5 @@
 import { View } from 'react-native'
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler'
 
 import GasolineSvg from 's/assets/gasoline.svg'
 import { LazyImage, Txt } from 's/components/atoms'
@@ -6,14 +7,14 @@ import { CarType } from 's/types/car'
 
 import s from './styles'
 
-type Props = {
+type Props = RectButtonProps & {
   data: CarType
 }
 
-export function CarListItem({ data }: Props) {
+export function CarListItem({ data, ...rest }: Props) {
   const { brand, name, rent, images } = data
   return (
-    <View style={s.box}>
+    <RectButton style={s.box} {...rest}>
       <View style={s.details}>
         <Txt family="secondary_500" size="xs" color="text_detail">
           {brand}
@@ -40,6 +41,6 @@ export function CarListItem({ data }: Props) {
         width={167}
         height={85}
       />
-    </View>
+    </RectButton>
   )
 }

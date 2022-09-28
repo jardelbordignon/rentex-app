@@ -1,7 +1,14 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
+import { CarType } from './car'
+
 export type AppParamList = {
-  home: undefined
+  Home: undefined
+  CarDetails: CarType
+  Scheduling: undefined
+  SchedulingComplete: undefined
+  SchedulingDetails: undefined
 }
 
-export type HomeNavProps = NativeStackScreenProps<AppParamList, 'home'>
+export type NavProps = NativeStackScreenProps<AppParamList, any>
+export type CarDetailsNavProps = NativeStackScreenProps<AppParamList, 'CarDetails'>

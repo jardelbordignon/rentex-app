@@ -4,10 +4,11 @@ import DoneSvg from 's/assets/done.svg'
 import LogoBackgroundSvg from 's/assets/logo_background_gray.svg'
 import { Txt } from 's/components/atoms'
 import { ConfirmButton } from 's/components/molecules'
+import { NavProps } from 's/types/navigation'
 
 import s from './styles'
 
-export function SchedulingComplete() {
+export function SchedulingComplete({ navigation }: NavProps) {
   const { width } = useWindowDimensions()
 
   return (
@@ -28,7 +29,7 @@ export function SchedulingComplete() {
       </View>
 
       <View style={s.footer}>
-        <ConfirmButton title="Ok" />
+        <ConfirmButton title="Ok" onPress={() => navigation.navigate('Home')} />
       </View>
     </View>
   )

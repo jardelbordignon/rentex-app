@@ -3,15 +3,16 @@ import { ScrollView, StatusBar, View } from 'react-native'
 import ArrowSvg from 's/assets/arrow.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, Calendar } from 's/components/molecules'
+import { NavProps } from 's/types/navigation'
 
 import s from './styles'
 
-export function Scheduling() {
+export function Scheduling({ navigation }: NavProps) {
   return (
     <View style={s.box}>
       <View style={s.header}>
         <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
-        <BackButton onPress={() => {}} color="shape" />
+        <BackButton onPress={navigation.goBack} color="shape" />
 
         <Txt family="secondary_600" size="xl" color="shape" style={s.title}>
           Escolha uma {'\n'}
@@ -43,7 +44,10 @@ export function Scheduling() {
       </ScrollView>
 
       <View style={s.footer}>
-        <Button title="Confirmar" />
+        <Button
+          title="Confirmar"
+          onPress={() => navigation.navigate('SchedulingDetails')}
+        />
       </View>
     </View>
   )

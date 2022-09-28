@@ -9,24 +9,17 @@ import speedSvg from 's/assets/speed.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, ImageSlider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
+import { CarDetailsNavProps } from 's/types/navigation'
 
 import s from './styles'
 
-const images = [
-  {
-    url: 'https://www.freepngimg.com/thumb/fiat/135999-fiat-doblo-png-download-free.png',
-  },
-]
+export function CarDetails({ navigation, route }: CarDetailsNavProps) {
+  const { brand, images, name, rent } = route.params
 
-export function CarDetails() {
   return (
     <View style={s.box}>
       <View style={s.header}>
-        <BackButton
-          onPress={() => {
-            console.log('Press')
-          }}
-        />
+        <BackButton onPress={navigation.goBack} />
       </View>
 
       <View style={s.sliderBox}>
@@ -41,11 +34,11 @@ export function CarDetails() {
               color="text_detail"
               size="xs"
               transform="uppercase">
-              Fiat
+              {brand}
             </Txt>
 
             <Txt family="secondary_500" color="title" size="lg" transform="uppercase">
-              Doblô
+              {name}
             </Txt>
           </View>
 
@@ -58,7 +51,7 @@ export function CarDetails() {
               Ao dia
             </Txt>
             <Txt family="secondary_500" color="main" size="lg">
-              R$ 200
+              R$ {rent.price}
             </Txt>
           </View>
         </View>
@@ -80,7 +73,10 @@ export function CarDetails() {
       </ScrollView>
 
       <View style={s.footer}>
-        <Button title="Confirmar" />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={() => navigation.navigate('Scheduling')}
+        />
       </View>
     </View>
   )

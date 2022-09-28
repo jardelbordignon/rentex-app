@@ -6,6 +6,7 @@ import Logo from 's/assets/logo.svg'
 import { Txt } from 's/components/atoms'
 import { CarListItem } from 's/components/molecules/CarListItem'
 import { CarType } from 's/types/car'
+import { NavProps } from 's/types/navigation'
 
 import s from './styles'
 
@@ -30,7 +31,7 @@ const carsData: CarType[] = [
   },
 ]
 
-export function Home() {
+export function Home({ navigation }: NavProps) {
   return (
     <View style={s.box}>
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
@@ -44,7 +45,12 @@ export function Home() {
       <FlatList
         data={carsData}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <CarListItem data={item} />}
+        renderItem={({ item }) => (
+          <CarListItem
+            data={item}
+            onPress={() => navigation.navigate('CarDetails', item)}
+          />
+        )}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={s.contentList}
       />

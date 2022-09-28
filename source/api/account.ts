@@ -1,4 +1,3 @@
-import { env } from 's/config'
 import { LoginInputType, LoginResponseType } from 's/types/account'
 
 import { api } from './base'

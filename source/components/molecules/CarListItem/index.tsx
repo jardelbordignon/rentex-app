@@ -12,7 +12,7 @@ type Props = RectButtonProps & {
 }
 
 export function CarListItem({ data, ...rest }: Props) {
-  const { brand, name, rent, images } = data
+  const { brand, name, rent, thumbnail } = data
   return (
     <RectButton style={s.box} {...rest}>
       <View style={s.details}>
@@ -36,8 +36,8 @@ export function CarListItem({ data, ...rest }: Props) {
       </View>
 
       <LazyImage
-        source={{ uri: images[0].url }}
-        thumbSource={{ uri: images[0].thumbUrl }}
+        source={{ uri: thumbnail }}
+        //thumbSource={{ uri: photos[0] }}
         width={167}
         height={85}
       />

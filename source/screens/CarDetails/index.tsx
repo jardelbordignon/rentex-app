@@ -1,10 +1,10 @@
 import { ScrollView, View } from 'react-native'
 
-import accelerationSvg from 's/assets/acceleration.svg'
-import exchangeSvg from 's/assets/exchange.svg'
-import forceSvg from 's/assets/force.svg'
-import gasolineSvg from 's/assets/gasoline.svg'
-import peopleSvg from 's/assets/people.svg'
+// import accelerationSvg from 's/assets/acceleration.svg'
+// import exchangeSvg from 's/assets/exchange.svg'
+// import forceSvg from 's/assets/force.svg'
+// import gasolineSvg from 's/assets/gasoline.svg'
+// import peopleSvg from 's/assets/people.svg'
 import speedSvg from 's/assets/speed.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, ImageSlider } from 's/components/molecules'
@@ -14,7 +14,7 @@ import { CarDetailsNavProps } from 's/types/navigation'
 import s from './styles'
 
 export function CarDetails({ navigation, route }: CarDetailsNavProps) {
-  const { brand, images, name, rent } = route.params
+  const { about, accessories, brand, photos, name, rent } = route.params
 
   return (
     <View style={s.box}>
@@ -23,7 +23,7 @@ export function CarDetails({ navigation, route }: CarDetailsNavProps) {
       </View>
 
       <View style={s.sliderBox}>
-        <ImageSlider images={images} />
+        <ImageSlider images={photos.map(photo => ({ url: photo }))} />
       </View>
 
       <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
@@ -57,18 +57,13 @@ export function CarDetails({ navigation, route }: CarDetailsNavProps) {
         </View>
 
         <View style={s.accessories}>
-          <Accessory name="380Km/h" icon={speedSvg} />
-          <Accessory name="3.2s" icon={accelerationSvg} />
-          <Accessory name="800 HP" icon={forceSvg} />
-          <Accessory name="Gasolina" icon={gasolineSvg} />
-          <Accessory name="Auto" icon={exchangeSvg} />
-          <Accessory name="2 pessoas" icon={peopleSvg} />
+          {accessories.map(accessory => (
+            <Accessory key={accessory.name} name={accessory.name} icon={speedSvg} />
+          ))}
         </View>
 
         <Txt family="primary_400" size="sm" align="justify" style={s.about}>
-          Descrição fiat doblo fiat doblo fiat d oblo fiat dobl o fiat doblo fiat doblo
-          fiat doblo fiat dob lo fiat doblo fiat doblo fiat d oblo fiat doblo fiat doblo
-          fiat dob lo fiat doblo fiat dob lo fiat doblo
+          {about}
         </Txt>
       </ScrollView>
 

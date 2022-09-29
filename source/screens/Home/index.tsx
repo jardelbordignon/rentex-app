@@ -49,7 +49,7 @@ export function Home({ navigation }: NavProps) {
           renderItem={({ item }) => (
             <CarListItem
               data={item}
-              onPress={() => navigation.navigate('CarDetails', item)}
+              onPress={() => navigation.navigate('CarDetails', { car: item })}
             />
           )}
           showsVerticalScrollIndicator={false}

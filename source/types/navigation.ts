@@ -4,11 +4,19 @@ import { CarType } from './car'
 
 export type AppParamList = {
   Home: undefined
-  CarDetails: CarType
-  Scheduling: undefined
+  CarDetails: { car: CarType }
+  Scheduling: { car: CarType }
   SchedulingComplete: undefined
-  SchedulingDetails: undefined
+  SchedulingDetails: {
+    car: CarType
+    dates: { from: string; to: string }
+  }
 }
 
 export type NavProps = NativeStackScreenProps<AppParamList, any>
 export type CarDetailsNavProps = NativeStackScreenProps<AppParamList, 'CarDetails'>
+export type SchedulingNavProps = NativeStackScreenProps<AppParamList, 'Scheduling'>
+export type SchedulingDetailsNavProps = NativeStackScreenProps<
+  AppParamList,
+  'SchedulingDetails'
+>

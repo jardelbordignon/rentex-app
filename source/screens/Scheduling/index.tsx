@@ -6,15 +6,17 @@ import ArrowSvg from 's/assets/arrow.svg'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, Calendar, MarkedDateProps } from 's/components/molecules'
 import { generateInterval } from 's/components/molecules/Calendar/generateInterval'
-import { NavProps } from 's/types/navigation'
+import { SchedulingNavProps } from 's/types/navigation'
+import { formatDate } from 's/utils/formatters'
 
 import s from './styles'
 
-export function Scheduling({ navigation }: NavProps) {
+export function Scheduling({ navigation, route }: SchedulingNavProps) {
   const [lastSelectedDate, setLastSelectedDate] = useState<DateData>()
   const [markedDates, setMarkedDates] = useState<MarkedDateProps>({})
 
-  console.log('markedDates', markedDates)
+  const startDate = Object.keys(markedDates)[0]
+  const endDate = Object.keys(markedDates).pop()
 
   const handleChangeDate = (date: DateData) => {
     let start = !lastSelectedDate?.timestamp ? date : lastSelectedDate
@@ -43,20 +45,24 @@ export function Scheduling({ navigation }: NavProps) {
         </Txt>
 
         <View style={s.rentalPeriod}>
-          <View style={s.dateInfo}>
+          <View>
             <Txt family="secondary_500" size="xs">
               DE
             </Txt>
-            <Txt color="shape">10/01</Txt>
+            <Txt size="sm" color="shape">
+              {startDate ? formatDate(startDate) : ''}
+            </Txt>
           </View>
 
           <ArrowSvg />
 
-          <View style={s.dateInfo}>
+          <View>
             <Txt family="secondary_500" size="xs">
               ATÉ
             </Txt>
-            <Txt color="shape">10/01</Txt>
+            <Txt size="sm" color="shape">
+              {endDate ? formatDate(endDate) : ''}
+            </Txt>
           </View>
         </View>
       </View>
@@ -65,12 +71,22 @@ export function Scheduling({ navigation }: NavProps) {
         <Calendar markedDates={markedDates} onDayPress={handleChangeDate} />
       </ScrollView>
 
-      <View style={s.footer}>
-        <Button
-          title="Confirmar"
-          onPress={() => navigation.navigate('SchedulingDetails')}
-        />
-      </View>
+      {startDate && endDate && (
+        <View style={s.footer}>
+          <Button
+            title="Confirmar"
+            onPress={() =>
+              navigation.navigate('SchedulingDetails', {
+                car: route.params.car,
+                dates: {
+                  from: formatDate(startDate),
+                  to: formatDate(endDate),
+                },
+              })
+            }
+          />
+        </View>
+      )}
     </View>
   )
 }

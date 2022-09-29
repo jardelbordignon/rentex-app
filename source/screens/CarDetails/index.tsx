@@ -9,7 +9,7 @@ import { accessoryIcon } from 's/utils/accessoryIcon'
 import s from './styles'
 
 export function CarDetails({ navigation, route }: CarDetailsNavProps) {
-  const { about, accessories, brand, photos, name, rent } = route.params
+  const { about, accessories, brand, photos, name, rent } = route.params.car
 
   return (
     <View style={s.box}>
@@ -69,7 +69,7 @@ export function CarDetails({ navigation, route }: CarDetailsNavProps) {
       <View style={s.footer}>
         <Button
           title="Escolher período do aluguel"
-          onPress={() => navigation.navigate('Scheduling')}
+          onPress={() => navigation.navigate('Scheduling', { car: route.params.car })}
         />
       </View>
     </View>

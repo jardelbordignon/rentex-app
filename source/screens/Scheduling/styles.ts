@@ -31,10 +31,6 @@ export default StyleSheet.create({
     marginVertical: theme.spacing[4],
   },
 
-  dateInfo: {
-    width: '30%',
-  },
-
   content: {
     paddingBottom: theme.spacing[3],
   },

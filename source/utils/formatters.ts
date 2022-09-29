@@ -1,5 +1,9 @@
-export const formatPrice = (amount: number, language = 'pt-BR', currency = 'BRL') =>
-  Number(amount).toLocaleString(language, { style: 'currency', currency })
+export const formatPrice = (amount: number, language = 'pt-BR', currency = 'BRL') => {
+  if (!amount) return ''
+  return amount
+    .toLocaleString(language, { style: 'currency', currency })
+    .replace(/^(\D+)/, '$1 ') // add space
+}
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
 // https://stackoverflow.com/questions/27939773/tolocaledatestring-short-format
@@ -16,4 +20,7 @@ export const formatDate = (
     lang?: string
     format?: DateOptionsType
   }
-) => new Date(date).toLocaleDateString(opts?.lang || 'pt-BR', opts?.format)
+) => {
+  if (!date) return ''
+  return new Date(`${date} `).toLocaleDateString(opts?.lang || 'pt-BR', opts?.format)
+}

@@ -1,20 +1,28 @@
 import { ScrollView, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import { scheduleApi } from 's/api/schedule'
 import { Txt } from 's/components/atoms'
 import { BackButton, Button, ImageSlider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 import { theme } from 's/theme'
 import { SchedulingDetailsNavProps } from 's/types/navigation'
 import { accessoryIcon } from 's/utils/accessoryIcon'
+import { formatDate, formatPrice } from 's/utils/formatters'
 
 import s from './styles'
 
 export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavProps) {
   const {
-    car: { accessories, brand, photos, name, rent },
-    dates: { from, to },
+    car: { accessories, brand, id, photos, name, rent },
+    dates,
   } = route.params
+
+  const handleConfirmRental = async () => {
+    await scheduleApi.add(id, dates)
+
+    navigation.navigate('SchedulingComplete')
+  }
 
   return (
     <View style={s.box}>
@@ -79,7 +87,7 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
             <Txt color="text_detail" size="xs">
               DE
             </Txt>
-            <Txt size="sm">{from}</Txt>
+            <Txt size="sm">{formatDate(dates[0])}</Txt>
           </View>
 
           <Icon
@@ -92,7 +100,7 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
             <Txt color="text_detail" size="xs">
               ATÉ
             </Txt>
-            <Txt size="sm">{to}</Txt>
+            <Txt size="sm">{formatDate(dates[dates.length - 1])}</Txt>
           </View>
         </View>
 
@@ -102,21 +110,17 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
           </Txt>
           <View style={s.rentalPriceDetails}>
             <Txt family="primary_500" size="sm">
-              R$ 200 x3 diárias
+              R$ {rent.price} x{dates.length} diárias
             </Txt>
             <Txt family="primary_500" size="lg" color="success">
-              R$ 600,00
+              {formatPrice(rent.price * dates.length)}
             </Txt>
           </View>
         </View>
       </ScrollView>
 
       <View style={s.footer}>
-        <Button
-          title="Alugar agora"
-          color="success"
-          onPress={() => navigation.navigate('SchedulingComplete')}
-        />
+        <Button title="Alugar agora" color="success" onPress={handleConfirmRental} />
       </View>
     </View>
   )

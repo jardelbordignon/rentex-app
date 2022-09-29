@@ -15,8 +15,7 @@ export function Scheduling({ navigation, route }: SchedulingNavProps) {
   const [lastSelectedDate, setLastSelectedDate] = useState<DateData>()
   const [markedDates, setMarkedDates] = useState<MarkedDateProps>({})
 
-  const startDate = Object.keys(markedDates)[0]
-  const endDate = Object.keys(markedDates).pop()
+  const datesOfMarkedDates = Object.keys(markedDates)
 
   const handleChangeDate = (date: DateData) => {
     let start = !lastSelectedDate?.timestamp ? date : lastSelectedDate
@@ -50,7 +49,7 @@ export function Scheduling({ navigation, route }: SchedulingNavProps) {
               DE
             </Txt>
             <Txt size="sm" color="shape">
-              {startDate ? formatDate(startDate) : ''}
+              {formatDate(datesOfMarkedDates[0])}
             </Txt>
           </View>
 
@@ -61,7 +60,7 @@ export function Scheduling({ navigation, route }: SchedulingNavProps) {
               ATÉ
             </Txt>
             <Txt size="sm" color="shape">
-              {endDate ? formatDate(endDate) : ''}
+              {formatDate(datesOfMarkedDates[datesOfMarkedDates.length - 1])}
             </Txt>
           </View>
         </View>
@@ -71,17 +70,14 @@ export function Scheduling({ navigation, route }: SchedulingNavProps) {
         <Calendar markedDates={markedDates} onDayPress={handleChangeDate} />
       </ScrollView>
 
-      {startDate && endDate && (
+      {datesOfMarkedDates[0] && (
         <View style={s.footer}>
           <Button
             title="Confirmar"
             onPress={() =>
               navigation.navigate('SchedulingDetails', {
                 car: route.params.car,
-                dates: {
-                  from: formatDate(startDate),
-                  to: formatDate(endDate),
-                },
+                dates: datesOfMarkedDates,
               })
             }
           />

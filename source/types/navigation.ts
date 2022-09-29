@@ -9,7 +9,7 @@ export type AppParamList = {
   SchedulingComplete: undefined
   SchedulingDetails: {
     car: CarType
-    dates: { from: string; to: string }
+    dates: string[]
   }
 }
 

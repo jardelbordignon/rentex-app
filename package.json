@@ -10,7 +10,7 @@
     "s": "react-native start",
     "s:rc": "react-native start --reset-cache",
     "nm": "rm -rf node_modules && yarn install",
-    "api": "npx json-server ./source/api/server.json --host 192.168.0.107 --port 3000 --delay 700",
+    "server": "npx json-server ./source/api/server.json --host 192.168.0.107 --port 3000 --delay 700",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },

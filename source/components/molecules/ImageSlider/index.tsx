@@ -28,7 +28,7 @@ export function ImageSlider({ images, delay = 4 }: Props) {
     else index++
 
     if (index >= images.length) index = 0
-    flatListRef.current?.scrollToIndex({ index, animated: index > 0 })
+    flatListRef.current?.scrollToIndex({ index, animated: true })
   }
 
   const startSlide = () => {
@@ -54,7 +54,11 @@ export function ImageSlider({ images, delay = 4 }: Props) {
         data={images}
         keyExtractor={item => item.url}
         renderItem={({ item }) => (
-          <LazyImage source={{ uri: item.url }} style={s.image} />
+          <LazyImage
+            source={{ uri: item.url }}
+            thumbSource={{ uri: item.thumbUrl }}
+            style={s.image}
+          />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}

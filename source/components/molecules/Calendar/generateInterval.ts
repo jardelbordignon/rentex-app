@@ -16,11 +16,13 @@ export function generateInterval(start: DateData, end: DateData) {
   let interval: MarkedDateProps = {}
 
   arrayOfDays.forEach((_, i) => {
-    const date = formatDate(new Date(start.timestamp + i * oneDay), { lang: 'en-CA' })
+    const date = formatDate(new Date(start.timestamp + oneDay + i * oneDay), {
+      lang: 'en-CA',
+    })
 
     const isStartOrEndDate =
-      formatDate(start.dateString, { lang: 'en-CA' }) === date ||
-      formatDate(end.dateString, { lang: 'en-CA' }) === date
+      formatDate(new Date(start.timestamp + oneDay), { lang: 'en-CA' }) === date ||
+      formatDate(new Date(end.timestamp + oneDay), { lang: 'en-CA' }) === date
 
     interval = {
       ...interval,
@@ -31,5 +33,6 @@ export function generateInterval(start: DateData, end: DateData) {
     }
   })
 
+  console.log('interval', interval)
   return interval
 }

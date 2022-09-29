@@ -1,4 +1,4 @@
-import { LocaleConfig, Calendar as _Calendar } from 'react-native-calendars'
+import { DateData, LocaleConfig, Calendar as _Calendar } from 'react-native-calendars'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { theme } from 's/theme'
@@ -9,7 +9,21 @@ import s from './styles'
 LocaleConfig.locales['pt-br'] = dateNames
 LocaleConfig.defaultLocale = 'pt-br'
 
-export function Calendar() {
+export type MarkedDateProps = {
+  [date: string]: {
+    color: string
+    textColor: string
+    disabled?: boolean
+    disabledTouchEvent?: boolean
+  }
+}
+
+type Props = {
+  markedDates: MarkedDateProps
+  onDayPress(date: DateData): void
+}
+
+export function Calendar({ markedDates, onDayPress }: Props) {
   return (
     <_Calendar
       renderArrow={direction => (
@@ -32,6 +46,9 @@ export function Calendar() {
       }}
       firstDay={1}
       minDate={new Date().toString()}
+      markingType="period"
+      markedDates={markedDates}
+      onDayPress={onDayPress}
     />
   )
 }

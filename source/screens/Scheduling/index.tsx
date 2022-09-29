@@ -1,13 +1,35 @@
+import { useState } from 'react'
 import { ScrollView, StatusBar, View } from 'react-native'
+import type { DateData } from 'react-native-calendars'
 
 import ArrowSvg from 's/assets/arrow.svg'
 import { Txt } from 's/components/atoms'
-import { BackButton, Button, Calendar } from 's/components/molecules'
+import { BackButton, Button, Calendar, MarkedDateProps } from 's/components/molecules'
+import { generateInterval } from 's/components/molecules/Calendar/generateInterval'
 import { NavProps } from 's/types/navigation'
 
 import s from './styles'
 
 export function Scheduling({ navigation }: NavProps) {
+  const [lastSelectedDate, setLastSelectedDate] = useState<DateData>()
+  const [markedDates, setMarkedDates] = useState<MarkedDateProps>({})
+
+  console.log('markedDates', markedDates)
+
+  const handleChangeDate = (date: DateData) => {
+    let start = !lastSelectedDate?.timestamp ? date : lastSelectedDate
+    let end = date
+
+    if (start.timestamp > end.timestamp) {
+      start = end
+      end = start
+    }
+
+    setLastSelectedDate(end)
+    const interval = generateInterval(start, end)
+    setMarkedDates(interval)
+  }
+
   return (
     <View style={s.box}>
       <View style={s.header}>
@@ -40,7 +62,7 @@ export function Scheduling({ navigation }: NavProps) {
       </View>
 
       <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
-        <Calendar />
+        <Calendar markedDates={markedDates} onDayPress={handleChangeDate} />
       </ScrollView>
 
       <View style={s.footer}>

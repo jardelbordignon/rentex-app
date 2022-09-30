@@ -259,7 +259,7 @@
       ]
     }
   ],
-  "schedules_bycars": [
+  "schedules_by_car": [
     {
       "id": "535e8de8-721b-4bac-8b72-7d29be7da467",
       "unavailable_dates": [
@@ -347,7 +347,7 @@
       ]
     }
   ],
-  "schedules_byuser": [
+  "schedules_by_user": [
     {
       "user_id": 1,
       "car": {

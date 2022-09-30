@@ -49,23 +49,23 @@ const baseTheme = {
 
   spacing: {
     /** 4px */
-    '1': RFValue(4),
+    '0.5': RFValue(4),
     /** 8px */
-    '2': RFValue(8),
+    '1': RFValue(8),
     /** 16px */
-    '3': RFValue(16),
+    '2': RFValue(16),
     /** 24px */
-    '4': RFValue(24),
+    '3': RFValue(24),
     /** 32px */
-    '5': RFValue(32),
+    '4': RFValue(32),
     /** 40px */
-    '6': RFValue(40),
-    /** 48px */
-    '7': RFValue(48),
-    /** 64px */
-    '8': RFValue(64),
-    /** 80px */
-    '9': RFValue(80),
+    '5': RFValue(40),
+    /** 56px */
+    '6': RFValue(56),
+    /** 72px */
+    '7': RFValue(72),
+    /** 88px */
+    '8': RFValue(88),
   },
 }
 

@@ -14,16 +14,16 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'absolute',
-    marginTop: getStatusBarHeight() + theme.spacing[3],
+    marginTop: getStatusBarHeight() + theme.spacing[2],
     marginLeft: theme.spacing[5],
   },
 
   sliderBox: {
-    marginTop: getStatusBarHeight() + theme.spacing[4],
+    marginTop: getStatusBarHeight() + theme.spacing[3],
   },
 
   content: {
-    padding: theme.spacing[4],
+    padding: theme.spacing[3],
     alignItems: 'center',
   },
 
@@ -31,7 +31,7 @@ export default StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: theme.spacing[5],
+    marginTop: theme.spacing[4],
   },
 
   description: {},
@@ -44,7 +44,7 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: theme.spacing[3],
+    marginTop: theme.spacing[2],
   },
 
   rentalPeriod: {
@@ -52,10 +52,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: theme.spacing[6],
+    marginTop: theme.spacing[5],
     borderBottomWidth: 0.5,
     borderBottomColor: theme.colors.line,
-    paddingBottom: theme.spacing[3],
+    paddingBottom: theme.spacing[2],
   },
 
   calendarIcon: {
@@ -70,7 +70,7 @@ export default StyleSheet.create({
 
   rentalPrice: {
     width: '100%',
-    marginBottom: theme.spacing[3],
+    marginBottom: theme.spacing[2],
   },
 
   rentalPriceDetails: {
@@ -82,7 +82,7 @@ export default StyleSheet.create({
 
   footer: {
     width: '100%',
-    padding: theme.spacing[4],
-    paddingBottom: getBottomSpace() + theme.spacing[4],
+    padding: theme.spacing[3],
+    paddingBottom: getBottomSpace() + theme.spacing[3],
   },
 })

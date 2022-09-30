@@ -22,6 +22,6 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   contentList: {
-    padding: theme.spacing[3],
+    padding: theme.spacing[2],
   },
 })

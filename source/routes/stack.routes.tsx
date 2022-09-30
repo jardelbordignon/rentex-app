@@ -10,7 +10,7 @@ import { SchedulingDetails } from 's/screens/SchedulingDetails'
 const { Navigator, Screen } = createNativeStackNavigator()
 
 export const StackRoutes = () => (
-  <Navigator screenOptions={{ headerShown: false }} initialRouteName="home">
+  <Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
     <Screen name="CarDetails" component={CarDetails} />
     <Screen name="Home" component={Home} />
     <Screen name="MyCars" component={MyCars} />

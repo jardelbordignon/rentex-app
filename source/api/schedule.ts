@@ -1,10 +1,14 @@
-import { SchedulesByCar } from 's/types/schedule'
+import { ScheduleByUser, SchedulesByCar } from 's/types/schedule'
 
 import { api } from './base'
 
 class ScheduleApi {
+  async findByUser(userId: string) {
+    return api.get<ScheduleByUser[]>(`schedules_by_user?user_id=${userId}`)
+  }
+
   async findByCar(carId: string) {
-    return api.get<SchedulesByCar>(`schedules_bycars/${carId}`)
+    return api.get<SchedulesByCar>(`schedules_by_car/${carId}`)
   }
 
   async add(carId: string, dates: string[]) {
@@ -14,7 +18,7 @@ class ScheduleApi {
       ? [...schedules.unavailable_dates, ...dates]
       : dates
 
-    await api.put(`schedules_bycars/${carId}`, {
+    await api.put(`schedules_by_cars/${carId}`, {
       unavailable_dates,
     })
   }

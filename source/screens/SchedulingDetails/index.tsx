@@ -13,13 +13,10 @@ import { formatDate, formatPrice } from 's/utils/formatters'
 import s from './styles'
 
 export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavProps) {
-  const {
-    car: { accessories, brand, id, photos, name, rent },
-    dates,
-  } = route.params
+  const { car, dates } = route.params
 
   const handleConfirmRental = async () => {
-    await scheduleApi.add(id, dates)
+    await scheduleApi.add(car, dates)
 
     navigation.navigate('SchedulingComplete')
   }
@@ -31,7 +28,7 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
       </View>
 
       <View style={s.sliderBox}>
-        <ImageSlider images={photos.map(photo => ({ url: photo }))} />
+        <ImageSlider images={car.photos.map(photo => ({ url: photo }))} />
       </View>
 
       <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
@@ -42,11 +39,11 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
               color="text_detail"
               size="xs"
               transform="uppercase">
-              {brand}
+              {car.brand}
             </Txt>
 
             <Txt family="secondary_500" color="title" size="lg" transform="uppercase">
-              {name}
+              {car.name}
             </Txt>
           </View>
 
@@ -56,16 +53,16 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
               color="text_detail"
               size="xs"
               transform="uppercase">
-              {rent.period}
+              {car.rent.period}
             </Txt>
             <Txt family="secondary_500" color="main" size="lg">
-              R$ {rent.price}
+              R$ {car.rent.price}
             </Txt>
           </View>
         </View>
 
         <View style={s.accessories}>
-          {accessories.map(accessory => (
+          {car.accessories.map(accessory => (
             <Accessory
               key={accessory.name}
               name={accessory.name}
@@ -110,10 +107,10 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
           </Txt>
           <View style={s.rentalPriceDetails}>
             <Txt family="primary_500" size="sm">
-              R$ {rent.price} x{dates.length} diárias
+              R$ {car.rent.price} x{dates.length} diárias
             </Txt>
             <Txt family="primary_500" size="lg" color="success">
-              {formatPrice(rent.price * dates.length)}
+              {formatPrice(car.rent.price * dates.length)}
             </Txt>
           </View>
         </View>

@@ -6,7 +6,7 @@ import { RFValue } from 'react-native-responsive-fontsize'
 import { carApi } from 's/api/car'
 import Logo from 's/assets/logo.svg'
 import { Loading, Txt } from 's/components/atoms'
-import { CarListItem } from 's/components/molecules/CarListItem'
+import { CarListItem, FloatingButtons } from 's/components/molecules'
 import { CarType } from 's/types/car'
 import { NavProps } from 's/types/navigation'
 
@@ -56,6 +56,12 @@ export function Home({ navigation }: NavProps) {
           contentContainerStyle={s.contentList}
         />
       )}
+
+      <FloatingButtons
+        buttons={[
+          { color: 'main', icon: 'car', onPress: () => navigation.navigate('MyCars') },
+        ]}
+      />
     </View>
   )
 }

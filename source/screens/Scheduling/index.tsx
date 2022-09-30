@@ -70,19 +70,18 @@ export function Scheduling({ navigation, route }: SchedulingNavProps) {
         <Calendar markedDates={markedDates} onDayPress={handleChangeDate} />
       </ScrollView>
 
-      {datesOfMarkedDates[0] && (
-        <View style={s.footer}>
-          <Button
-            title="Confirmar"
-            onPress={() =>
-              navigation.navigate('SchedulingDetails', {
-                car: route.params.car,
-                dates: datesOfMarkedDates,
-              })
-            }
-          />
-        </View>
-      )}
+      <View style={s.footer}>
+        <Button
+          title="Confirmar"
+          onPress={() =>
+            navigation.navigate('SchedulingDetails', {
+              car: route.params.car,
+              dates: datesOfMarkedDates,
+            })
+          }
+          enabled={!!datesOfMarkedDates[0]}
+        />
+      </View>
     </View>
   )
 }

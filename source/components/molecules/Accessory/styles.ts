@@ -10,7 +10,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.colors.background_primary,
-    padding: theme.spacing[2],
-    marginBottom: theme.spacing[2],
+    padding: theme.spacing[1],
+    marginBottom: theme.spacing[1],
   },
 })

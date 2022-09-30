@@ -15,8 +15,8 @@ export default StyleSheet.create({
     height: RFValue(300),
     backgroundColor: theme.colors.header,
     justifyContent: 'center',
-    padding: theme.spacing[4],
-    paddingTop: getStatusBarHeight() + theme.spacing[4],
+    padding: theme.spacing[3],
+    paddingTop: getStatusBarHeight() + theme.spacing[3],
   },
 
   title: {
@@ -28,16 +28,16 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: theme.spacing[4],
+    marginVertical: theme.spacing[3],
   },
 
   content: {
-    paddingBottom: theme.spacing[3],
+    paddingBottom: theme.spacing[2],
   },
 
   footer: {
     width: '100%',
-    padding: theme.spacing[4],
-    paddingBottom: getBottomSpace() + theme.spacing[4],
+    padding: theme.spacing[3],
+    paddingBottom: getBottomSpace() + theme.spacing[3],
   },
 })

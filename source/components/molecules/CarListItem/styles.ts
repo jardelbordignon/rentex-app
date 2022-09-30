@@ -11,8 +11,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: RFValue(theme.spacing[3]),
-    marginBottom: RFValue(theme.spacing[3]),
+    padding: RFValue(theme.spacing[2]),
+    marginBottom: RFValue(theme.spacing[2]),
     borderRadius: 5,
   },
 

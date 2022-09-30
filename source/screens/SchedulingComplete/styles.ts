@@ -13,21 +13,21 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: theme.spacing[4],
+    marginBottom: theme.spacing[3],
   },
 
   title: {
-    marginTop: theme.spacing[6],
+    marginTop: theme.spacing[5],
   },
 
   message: {
-    marginTop: theme.spacing[3],
-    lineHeight: theme.spacing[4],
+    marginTop: theme.spacing[2],
+    lineHeight: theme.spacing[3],
   },
 
   footer: {
     width: '100%',
     alignItems: 'center',
-    marginVertical: theme.spacing[9],
+    marginVertical: theme.spacing[8],
   },
 })

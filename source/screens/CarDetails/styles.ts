@@ -14,16 +14,16 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'absolute',
-    marginTop: getStatusBarHeight() + theme.spacing[3],
-    marginLeft: theme.spacing[5],
+    marginTop: getStatusBarHeight() + theme.spacing[2],
+    marginLeft: theme.spacing[4],
   },
 
   sliderBox: {
-    marginTop: getStatusBarHeight() + theme.spacing[4],
+    marginTop: getStatusBarHeight() + theme.spacing[3],
   },
 
   content: {
-    padding: theme.spacing[4],
+    padding: theme.spacing[3],
     alignItems: 'center',
   },
 
@@ -31,7 +31,7 @@ export default StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: theme.spacing[5],
+    marginTop: theme.spacing[4],
   },
 
   description: {},
@@ -44,17 +44,17 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: theme.spacing[3],
+    marginTop: theme.spacing[2],
   },
 
   about: {
     lineHeight: 23,
-    marginTop: theme.spacing[4],
+    marginTop: theme.spacing[3],
   },
 
   footer: {
     width: '100%',
-    padding: theme.spacing[4],
-    paddingBottom: getBottomSpace() + theme.spacing[4],
+    padding: theme.spacing[3],
+    paddingBottom: getBottomSpace() + theme.spacing[2],
   },
 })

@@ -12,13 +12,13 @@ export default StyleSheet.create({
   indexes: {
     flexDirection: 'row',
     alignSelf: 'flex-end',
-    paddingRight: theme.spacing[2],
+    paddingRight: theme.spacing[1],
   },
 
   index: {
     width: 6,
     height: 6,
-    marginLeft: theme.spacing[2],
+    marginLeft: theme.spacing[1],
     borderRadius: 3,
   },
 

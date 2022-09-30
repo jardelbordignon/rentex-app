@@ -12,7 +12,7 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.background_secondary,
     borderBottomWidth: 0.5,
     borderBottomColor: theme.colors.text_detail,
-    paddingBottom: theme.spacing[2],
-    marginBottom: theme.spacing[2],
+    paddingBottom: theme.spacing[1],
+    marginBottom: theme.spacing[1],
   },
 })

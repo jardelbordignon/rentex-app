@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { scheduleApi } from 's/api/schedule'
 import { Txt } from 's/components/atoms'
-import { BackButton, Button, ImageSlider } from 's/components/molecules'
+import { BackButton, Button, Slider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 import { theme } from 's/theme'
 import { SchedulingDetailsNavProps } from 's/types/navigation'
@@ -28,7 +28,7 @@ export function SchedulingDetails({ navigation, route }: SchedulingDetailsNavPro
       </View>
 
       <View style={s.sliderBox}>
-        <ImageSlider images={car.photos.map(photo => ({ url: photo }))} />
+        <Slider images={car.photos.map(photo => ({ url: photo }))} />
       </View>
 
       <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>

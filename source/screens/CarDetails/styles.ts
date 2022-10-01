@@ -15,7 +15,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     marginTop: getStatusBarHeight() + theme.spacing[2],
-    marginLeft: theme.spacing[4],
+    marginLeft: theme.spacing[3],
   },
 
   sliderBox: {

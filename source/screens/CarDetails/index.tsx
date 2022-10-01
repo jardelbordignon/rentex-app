@@ -1,7 +1,7 @@
 import { ScrollView, View } from 'react-native'
 
 import { Txt } from 's/components/atoms'
-import { BackButton, Button, ImageSlider } from 's/components/molecules'
+import { BackButton, Button, Slider } from 's/components/molecules'
 import { Accessory } from 's/components/molecules/Accessory'
 import { CarDetailsNavProps } from 's/types/navigation'
 import { accessoryIcon } from 's/utils/accessoryIcon'
@@ -18,7 +18,7 @@ export function CarDetails({ navigation, route }: CarDetailsNavProps) {
       </View>
 
       <View style={s.sliderBox}>
-        <ImageSlider images={photos.map(photo => ({ url: photo }))} />
+        <Slider images={photos.map(photo => ({ url: photo }))} />
       </View>
 
       <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>

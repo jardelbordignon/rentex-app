@@ -6,12 +6,12 @@ export default StyleSheet.create({
   box: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: theme.colors.header,
   },
 
-  txt: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
+  animatedView: {
+    width: 100,
+    height: 100,
+    backgroundColor: theme.colors.main,
   },
 })

@@ -1,19 +1,31 @@
-import { Button, View } from 'react-native'
-import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated'
+import { Button, Dimensions, View } from 'react-native'
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated'
 
 import s from './styles'
+
+const WIDTH = Dimensions.get('window').width
 
 export function Splash() {
   const animation = useSharedValue(0)
 
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: animation.value }],
+    transform: [
+      {
+        translateX: withTiming(animation.value, {
+          duration: 500,
+          easing: Easing.bezier(0, 1, 1, 0), // https://cubic-bezier.com/
+        }),
+      },
+    ],
   }))
 
   const handleAnimationPosition = () => {
-    setInterval(() => {
-      animation.value = animation.value + 1
-    }, 2)
+    animation.value = Math.random() * (WIDTH - 100)
   }
 
   return (

@@ -1,0 +1,53 @@
+ANDROID
+
+1 - Nome do projeto.
+Editar -> /android/app/src/main/res/values/strings.xml
+
+2 - Icones
+Dentro do diretório /android/app/src/main/res ficam os diretórios mipmap-...
+para cada resolução com os arquivos ic_launcher_round.png e ic_launcher.png respectivos
+
+basta subtituílos, existem várias ferramentas para gerar os icones nos tamanhos corretos.
+
+exemplo:
+https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+https://jgilfelt.github.io/AndroidAssetStudio/icons-launcher.html
+
+3 - Splash
+Criar ou editar arquivo /android/app/src/main/res/values/colors.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<resourses>
+  <color name="background">#000000</color>
+</resourses>
+
+Incluir dentro de /android/app/src/main/res/drawable a logo marca que será
+exibida na splash, edite o nome na imagem para logo.png
+
+Criar arquivo /android/app/src/main/res/drawable/splash.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:drawable="@color/background" />
+  <item 
+    android:drawable="@drawable/logo"
+    android:height="50dp"
+    android:width="80dp"
+    android:gravity="center"
+  />
+</layer-list>
+
+Ajustar android:height e android:width conforme as dimensões da logo.png
+
+Com isso a splash está configurada, para que ela seja utilizada é preciso editar o arquivo
+/android/app/src/main/res/values/styles.xml
+
+a tag style AppTheme precisa ter o seguinte item
+<item name="android:windowBackground">@drawable/splash</item>
+
+também é aconselhável editar o estilo da statusbar antes de ser carregada de fato pelo app
+<item name="android:statusBarColor">@color/background</item>
+
+Feito isso, reinstale o app.
+
+https://www.figma.com/community/file/1155362909441341285

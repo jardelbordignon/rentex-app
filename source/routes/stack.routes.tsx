@@ -11,7 +11,7 @@ import { Splash } from 's/screens/Splash'
 const { Navigator, Screen } = createNativeStackNavigator()
 
 export const StackRoutes = () => (
-  <Navigator screenOptions={{ headerShown: false }} initialRouteName="Splash">
+  <Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
     <Screen name="CarDetails" component={CarDetails} />
     <Screen name="Home" component={Home} />
     <Screen name="MyCars" component={MyCars} />

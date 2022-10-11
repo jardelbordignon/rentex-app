@@ -25,6 +25,7 @@ export default StyleSheet.create({
   content: {
     padding: theme.spacing[3],
     alignItems: 'center',
+    paddingTop: getStatusBarHeight(),
   },
 
   details: {

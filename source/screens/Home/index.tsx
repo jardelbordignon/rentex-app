@@ -36,7 +36,7 @@ export function Home({ navigation }: NavProps) {
       <View style={s.header}>
         <View style={s.headerContent}>
           <Logo width={RFValue(108)} height={RFValue(12)} />
-          <Txt size="xs">Total de 12 carros</Txt>
+          {!loading && <Txt size="xs">Total de {cars.length} carros</Txt>}
         </View>
       </View>
 

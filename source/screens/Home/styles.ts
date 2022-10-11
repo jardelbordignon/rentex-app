@@ -8,6 +8,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.background_primary,
   },
+
   header: {
     width: '100%',
     height: RFValue(113),
@@ -16,11 +17,13 @@ export default StyleSheet.create({
     paddingVertical: theme.spacing[5],
     paddingHorizontal: theme.spacing[4],
   },
+
   headerContent: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+
   contentList: {
     padding: theme.spacing[2],
   },
